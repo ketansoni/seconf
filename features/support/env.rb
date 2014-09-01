@@ -1,13 +1,10 @@
 
-#require 'rbconfig'
-#require 'cucumber/formatter/unicode'
-
-#require 'capybara'
-#require 'capybara/dsl'
 require "capybara/cucumber"
 
 Capybara.default_driver = :selenium
-Capybara.app_host = "http://www.google.com"
+Capybara.default_selector = :css
+Capybara.app_host = "http://testphp.vulnweb.com/login.php"
+
 Capybara.register_driver :selenium do |app|
   Capybara::Selenium::Driver.new(app, :browser => :firefox)
 end
